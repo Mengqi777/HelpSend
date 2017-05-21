@@ -1,21 +1,67 @@
 package com.heu.cs.pojo;
 
+import com.google.gson.JsonObject;
+
+import javax.validation.constraints.Null;
+
 /**
  * Created by memgq on 2017/5/17.
  */
 public class OrderPojo {
-    String orderId="";
-    String startLocation="";
-    String endLocation="";
-    String sender="";
-    String receiver="";
-    String senderTel="";
-    String receiverTel="";
-    String goodsName="";
-    String sendTime="";
-    String receiveTime="";
-    String remark="";
-    String enclosurePath="";
+private String orderId="";
+    private JsonObject startLocation;
+    private JsonObject endLocation;
+    private    String sender="";
+    private    String receiver="";
+    private   String senderTel="";
+    private   String receiverTel="";
+    private   String goodsName="";
+
+    private    String remark="";
+
+    private    String sendTime="";
+    private    String receiveTime="";
+
+
+    private   String putOrderTime="";
+    private   String receiveOrderTime="";
+    private  String deliveryTime="";
+
+    private String enclosurePath="";
+    private  String status="";
+    public String getPutOrderTime() {
+        return putOrderTime;
+    }
+
+    public void setPutOrderTime(String putOrderTime) {
+        this.putOrderTime = putOrderTime;
+    }
+
+    public String getReceiveOrderTime() {
+        return receiveOrderTime;
+    }
+
+    public void setReceiveOrderTime(String receiveOrderTime) {
+        this.receiveOrderTime = receiveOrderTime;
+    }
+
+    public String getDeliveryTime() {
+        return deliveryTime;
+    }
+
+    public void setDeliveryTime(String deliveryTime) {
+        this.deliveryTime = deliveryTime;
+    }
+
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
 
     public String getOrderId() {
         return orderId;
@@ -25,21 +71,8 @@ public class OrderPojo {
         this.orderId = orderId;
     }
 
-    public String getStartLocation() {
-        return startLocation;
-    }
 
-    public void setStartLocation(String startLocation) {
-        this.startLocation = startLocation;
-    }
 
-    public String getEndLocation() {
-        return endLocation;
-    }
-
-    public void setEndLocation(String endLocation) {
-        this.endLocation = endLocation;
-    }
 
     public String getSender() {
         return sender;

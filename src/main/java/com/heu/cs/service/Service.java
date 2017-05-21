@@ -1,15 +1,14 @@
 package com.heu.cs.service;
 
+
+import com.heu.cs.dao.ReceiveOrderDao;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import com.heu.cs.dao.InsertOrderDao;
+import com.heu.cs.dao.CreateOrderDao;
 import org.bson.Document;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +19,7 @@ import java.util.List;
 @Path("/")
 public class Service {
 
+    private String status="";
 
         @GET
         @Produces({"text/html"})
@@ -41,12 +41,27 @@ public class Service {
             return document.toString();
         }
 
-        @GET
-        @Path("/insertorder/{order}")
-        @Produces(MediaType.TEXT_PLAIN)
-        public String insertorder(@PathParam("order") String orderStr){
-            InsertOrderDao insertOrderDao=new InsertOrderDao();
-            String status=insertOrderDao.insertOrder(orderStr);
-            return status;
-        }
+    /**
+     * 往数据库插入订单信息，发布订单
+     * @param orderInfoStr
+     * @return
+     */
+    @POST
+    @Path("/putorder/")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String createOrderURL(@FormParam("orderinfo") String orderInfoStr){
+        CreateOrderDao createOrderDao =new CreateOrderDao();
+        status= createOrderDao.insertOrder(orderInfoStr);
+        return status;
+    }
+
+    @POST
+    @Path("/receiveorder")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String receiveOrderURL(@FormParam("orderId") String orderId,
+                               @FormParam("orderReceiverId") String orderReceiverId){
+        ReceiveOrderDao receiveOrderDao=new ReceiveOrderDao();
+        status=receiveOrderDao.receiveOrder(orderId,orderReceiverId);
+        return status;
+    }
 }
