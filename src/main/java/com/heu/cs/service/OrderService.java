@@ -19,7 +19,7 @@ import java.util.List;
  * Created by memgq on 2017/5/14.
  */
 @Path("/order")
-public class orderservice {
+public class OrderService {
 
     private String status="";
 

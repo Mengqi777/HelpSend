@@ -9,8 +9,8 @@ import javax.validation.constraints.Null;
  */
 public class OrderPojo {
 private String orderId="";
-    private JsonObject startLocation;
-    private JsonObject endLocation;
+    private EndLocationPojo endLocation;
+    private StartLocationPojo startLocation;
     private    String sender="";
     private    String receiver="";
     private   String senderTel="";
@@ -19,16 +19,33 @@ private String orderId="";
 
     private    String remark="";
 
-    private    String sendTime="";
-    private    String receiveTime="";
+    private    String sendTime="";//期望配送员取物品时间
+    private    String receiveTime="";//期望物品送达时间
 
 
-    private   String putOrderTime="";
-    private   String receiveOrderTime="";
-    private  String deliveryTime="";
+    private   String putOrderTime="";//下单时间
+    private   String receiveOrderTime="";//接单时间
+    private  String deliveryTime="";//真正送达时间
 
     private String enclosurePath="";
     private  String status="";
+    public EndLocationPojo getEndLocation() {
+        return endLocation;
+    }
+
+    public void setEndLocation(EndLocationPojo endLocation) {
+        this.endLocation = endLocation;
+    }
+
+    public StartLocationPojo getStartLocation() {
+        return startLocation;
+    }
+
+    public void setStartLocation(StartLocationPojo startLocation) {
+        this.startLocation = startLocation;
+    }
+
+
     public String getPutOrderTime() {
         return putOrderTime;
     }

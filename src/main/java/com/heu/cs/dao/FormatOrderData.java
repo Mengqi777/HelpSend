@@ -17,22 +17,20 @@ public class FormatOrderData {
     public JsonObject  format(JsonObject obj){
         for(String s:prop1){
             if (obj.has(s)){
-
-            }else {
                 obj.addProperty(s,"");
             }
         }
-        for(String s:prop2){
-            if (obj.has(s)){
 
-            }else {
+        for(String s:prop2){
+
                 JsonObject object=new JsonObject();
                 object.addProperty( "description","");
                 object.addProperty( "latitude","");
                 object.addProperty( "longitude","");
                 obj.add(s,object);
-            }
+
         }
+
         return obj;
     }
 }

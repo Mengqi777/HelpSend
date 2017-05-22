@@ -31,6 +31,8 @@ public class JettyServerStart {
 
         // Tells the Jersey Servlet which REST service/class to load.
         jerseyServlet.setInitParameter("jersey.config.server.provider.packages","com.heu.cs.service");
+        jerseyServlet.setInitParameter("jersey.config.server.provider.classnames",
+                "UploadFileService;org.glassfish.jersey.media.multipart.MultiPartFeature");
 
 
         ServletHolder staticServlet = context.addServlet(DefaultServlet.class,"/*");
