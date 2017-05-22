@@ -2,11 +2,11 @@ package com.heu.cs.jettyserver;
 
 
 import org.eclipse.jetty.server.Server;
-import org.eclipse.jetty.server.ServerConnector;
+
 import org.eclipse.jetty.servlet.DefaultServlet;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
-import org.glassfish.jersey.servlet.ServletContainer;
+
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,7 +30,7 @@ public class JettyServerStart {
         jerseyServlet.setInitOrder(1);
 
         // Tells the Jersey Servlet which REST service/class to load.
-        jerseyServlet.setInitParameter("jersey.config.server.provider.packages","com.heu.service");
+        jerseyServlet.setInitParameter("jersey.config.server.provider.packages","com.heu.cs.service");
 
 
         ServletHolder staticServlet = context.addServlet(DefaultServlet.class,"/*");
