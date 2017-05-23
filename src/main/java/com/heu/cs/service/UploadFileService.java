@@ -45,9 +45,9 @@ public class UploadFileService {
                               @FormDataParam("filename") String filename) {
         String imageName = Calendar.getInstance().getTimeInMillis()
                 + disposition.getFileName();
-        System.out.println(filename);
+//        System.out.println(filename);
         File file = new File(ROOTPATH+ARTICLE_IMAGES_PATH + imageName);
-
+        System.out.println(ROOTPATH+ARTICLE_IMAGES_PATH + imageName);
         try {
             //使用common io的文件写入操作
             FileUtils.copyInputStreamToFile(fileInputStream, file);

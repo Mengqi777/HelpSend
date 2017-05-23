@@ -13,7 +13,8 @@
         var formData = new FormData($( "#uploadForm" )[0]);
         console.log($( "#uploadForm" )[0])
         $.ajax({
-            url: '/webapi/uploadfile/uploadimages' ,
+            url: 'http://mengqipoet.cn:8080/webapi/order/createorder',
+            //url: '/webapi/order/createorder',
             type: 'POST',
             data: formData,
             async: false,
@@ -21,6 +22,7 @@
             contentType: false,
             processData: false,
             success: function (returndata) {
+
                 console.log(returndata);
             },
             error: function (returndata) {
@@ -29,12 +31,18 @@
         });
     }
 </script>
-<form id= "uploadForm">
-    <p >指定文件名： <input type="text" id="filename" name="filename" value= ""/></p >
-    <p >上传文件： <input type="file" name="file"/></p>
+<form id= "uploadForm" >
+    <p >指定文件名： <input type="text" id="orderinfo" name="orderinfo" value= ""/></p >
+    <p >上传文件： <input type="file" name="photos"/></p>
     <input type="button" value="上传" onclick="doUpload()" />
 </form>
 
+<form id= "up" method="post" action="webapi/order/createorder">
+    <p >指定文件名： <input type="text" id="order" name="orderinfo" value= ""/></p >
+    <p >上传文件： <input type="file" name="photos"/></p>
+    <input type="submit" value="上传"  />
+</form>
+<div id="out"></div>
 
 </body>
 </html>

@@ -1,9 +1,5 @@
 package com.heu.cs.pojo;
 
-import com.google.gson.JsonObject;
-
-import javax.validation.constraints.Null;
-
 /**
  * Created by memgq on 2017/5/17.
  */
@@ -11,24 +7,38 @@ public class OrderPojo {
 private String orderId="";
     private EndLocationPojo endLocation;
     private StartLocationPojo startLocation;
-    private    String sender="";
-    private    String receiver="";
-    private   String senderTel="";
-    private   String receiverTel="";
-    private   String goodsName="";
+    private String sender = "";
+    private String receiver = "";
+    private String senderTel = "";
+    private String receiverTel = "";
+    private String goodsName = "";
+    private String orderOwnerId = "";
+    private String orderReceiverId = "";
+    private String remark = "";
+    private String sendTime = "";//期望配送员取物品时间
+    private String receiveTime = "";//期望物品送达时间
+    private String putOrderTime = "";//下单时间
+    private String receiveOrderTime = "";//接单时间
+    private String deliveryTime = "";//真正送达时间
+    private String imagePath = "";
+    private String orderStatus = "";
 
-    private    String remark="";
+    public String getOrderReceiverId() {
+        return orderReceiverId;
+    }
 
-    private    String sendTime="";//期望配送员取物品时间
-    private    String receiveTime="";//期望物品送达时间
+    public void setOrderReceiverId(String orderReceiverId) {
+        this.orderReceiverId = orderReceiverId;
+    }
 
+    public String getOrderId() {
+        return orderId;
+    }
 
-    private   String putOrderTime="";//下单时间
-    private   String receiveOrderTime="";//接单时间
-    private  String deliveryTime="";//真正送达时间
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
 
-    private String enclosurePath="";
-    private  String status="";
     public EndLocationPojo getEndLocation() {
         return endLocation;
     }
@@ -44,52 +54,6 @@ private String orderId="";
     public void setStartLocation(StartLocationPojo startLocation) {
         this.startLocation = startLocation;
     }
-
-
-    public String getPutOrderTime() {
-        return putOrderTime;
-    }
-
-    public void setPutOrderTime(String putOrderTime) {
-        this.putOrderTime = putOrderTime;
-    }
-
-    public String getReceiveOrderTime() {
-        return receiveOrderTime;
-    }
-
-    public void setReceiveOrderTime(String receiveOrderTime) {
-        this.receiveOrderTime = receiveOrderTime;
-    }
-
-    public String getDeliveryTime() {
-        return deliveryTime;
-    }
-
-    public void setDeliveryTime(String deliveryTime) {
-        this.deliveryTime = deliveryTime;
-    }
-
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
-    }
-
-
-
 
     public String getSender() {
         return sender;
@@ -131,6 +95,22 @@ private String orderId="";
         this.goodsName = goodsName;
     }
 
+    public String getOrderOwnerId() {
+        return orderOwnerId;
+    }
+
+    public void setOrderOwnerId(String orderOwnerId) {
+        this.orderOwnerId = orderOwnerId;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
     public String getSendTime() {
         return sendTime;
     }
@@ -147,19 +127,43 @@ private String orderId="";
         this.receiveTime = receiveTime;
     }
 
-    public String getRemark() {
-        return remark;
+    public String getPutOrderTime() {
+        return putOrderTime;
     }
 
-    public void setRemark(String remark) {
-        this.remark = remark;
+    public void setPutOrderTime(String putOrderTime) {
+        this.putOrderTime = putOrderTime;
     }
 
-    public String getEnclosurePath() {
-        return enclosurePath;
+    public String getReceiveOrderTime() {
+        return receiveOrderTime;
     }
 
-    public void setEnclosurePath(String enclosurePath) {
-        this.enclosurePath = enclosurePath;
+    public void setReceiveOrderTime(String receiveOrderTime) {
+        this.receiveOrderTime = receiveOrderTime;
+    }
+
+    public String getDeliveryTime() {
+        return deliveryTime;
+    }
+
+    public void setDeliveryTime(String deliveryTime) {
+        this.deliveryTime = deliveryTime;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
+
+    public String getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void setOrderStatus(String orderStatus) {
+        this.orderStatus = orderStatus;
     }
 }

@@ -24,7 +24,7 @@ public class ReceiveOrderDao {
             filter.append("orderId", orderId);
             Document update = new Document();
             update.append("$set", new Document("orderReceiverId", orderReceiverId));
-            update.append("$set", new Document("status", "1"));
+            update.append("$set", new Document("orderStatus", "1"));
             collection.updateOne(filter, update);
             connMongoDB.getMongoClient().close();
             return operateSuccess;
